@@ -1,12 +1,11 @@
 # TODO: applnk
-# TODO: fix rpm group
 
 Summary:	Agata Reports
 Name:		agata
 Version:	3_final
 Release:	1
 License:	GPL
-Group:		X11/Aplikacje/Grafika
+Group:		X11/Development/Tools
 Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
 Patch0:		%{name}-ini.patch
 URL:		http://agata.codigolivre.org.br/
