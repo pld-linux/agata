@@ -4,12 +4,13 @@ Summary:	Agata Reports
 Summary(pl):	Agata - narzêdzie do raportów
 Name:		agata
 Version:	3_final
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
 Patch0:		%{name}-ini.patch
 Patch1:		%{name}-gtk.patch
+Patch2:   %{name}-home_etc.patch
 URL:		http://agata.codigolivre.org.br/
 Requires:	php-gtk
 Requires:	php-pear-DB
@@ -32,6 +33,7 @@ z ró¿nych baz danych jako pliki tekstowe lub postscriptowe.
 %setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 
