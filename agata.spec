@@ -11,7 +11,7 @@ Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
 # Source0-md5:	078933cb6f320151cb71ae96560bd31d
 Patch0:		%{name}-ini.patch
 Patch1:		%{name}-gtk.patch
-Patch2:   %{name}-etc_dir.patch
+Patch2:		%{name}-etc_dir.patch
 URL:		http://agata.codigolivre.org.br/
 Requires:	php-gtk
 Requires:	php-pear-DB
