@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Agata Report is a Database Reporting Tool and EIS tool, MIS tool
 (graph generation), like Crystal Reports. It's written in PHP-GTK and
 allows you to edit and get SQL results from several databases as Text
-or PostScript Files. 
+or PostScript Files.
 
 %description -l pl
 Agata Report to narzêdzie do generowania raportów z baz danych,
