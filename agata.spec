@@ -10,7 +10,7 @@ Group:		X11/Development/Tools
 Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
 Patch0:		%{name}-ini.patch
 Patch1:		%{name}-gtk.patch
-Patch2:   %{name}-home_etc.patch
+Patch2:   %{name}-etc_dir.patch
 URL:		http://agata.codigolivre.org.br/
 Requires:	php-gtk
 Requires:	php-pear-DB
