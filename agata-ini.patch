@@ -142,3 +142,78 @@
 +# DateTimeFmt    = d/m/Y
 +# Orientation    = Portrait
 +# PsLineLen      = 500
+--- agata/classes/AgataCore.class.old	Fri Dec 13 20:17:06 2002
++++ agata/classes/AgataCore.class	Fri Dec 13 20:23:32 2002
+@@ -120,7 +120,7 @@
+   
+   function GravaConfig($project, $Language = null)
+   {
+-    $fd = fopen ("config.php", "w");
++    $fd = @fopen ("config.php", "w");
+     if ($fd)
+     {
+       fwrite ($fd, "<?\n");
+@@ -133,6 +133,20 @@
+         fwrite ($fd, '$setupScreenLanguage = ' . "'" . $this->aAgataConfig[$project]['Language'] . "';\n\n");
+       }
+       
++      fwrite($fd, "\n\n");
++      
++      foreach($this->aDescription as $key => $Config)
++      {
++        $Description = $this->aDescription[$key];
++        fwrite($fd, '$aDescription' . "['$key'] = '$Description';\n");
++      }
++      fwrite ($fd, "?>\n");
++      fclose($fd);  
++    }
++    
++    $fd = @fopen (getenv("HOME")."/.agata", "w");
++    if ($fd)
++    {
+       if ($project=='+')
+       {
+         $project = $this->aAgataConfig[$project]['Project'];
+@@ -142,33 +156,24 @@
+       {
+         if (is_array($Content))
+         {
++	  if ($key=='+')
++	  {
++	    $key = $project;
++	  }
++          fwrite($fd, "[$key]\n");
+           foreach ($Content as $Config => $Value)
+ 	  {
+-	    if ($key=='+')
+-	    {
+-	      $key = $project;
+-	    }
+-            fwrite($fd, str_pad('$aAgataConfig' . "['$key']['$Config'] ",40, ' ', STR_PAD_RIGHT) .  "= '$Value';\n");
++            fwrite($fd, str_pad($Config,40,' ',STR_PAD_RIGHT)."= $Value\n");
+ 	  }
+ 	  fwrite($fd, "\n");
+         }
+         else if (($key != 'defaultConfiguration') && ($content))
+         {
+-          fwrite($fd, '$aAgataConfig' . "['$key'] = '$Content';\n");
+-	  fwrite($fd, "\n");
++          fwrite($fd, "[$key]\n\n$Content\n"); // TESTME!!!
+         }
+       }
+-    
+-      fwrite($fd, "\n\n");
+-      
+-      foreach($this->aDescription as $key => $Config)
+-      {
+-        $Description = $this->aDescription[$key];
+-        fwrite($fd, '$aDescription' . "['$key'] = '$Description';\n");
+-      }
+-      fwrite ($fd, "?>\n");
+-      fclose($fd);  
+     }
++    
+   }
+ }
+ ?>
+\ No newline at end of file
