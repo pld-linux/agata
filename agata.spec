@@ -1,6 +1,7 @@
 # TODO: applnk
 
 Summary:	Agata Reports
+Summary(pl):	Agata - narzêdzie do raportów
 Name:		agata
 Version:	3_final
 Release:	1
@@ -16,9 +17,16 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Agata Report is a Database Reporting Tool and EIS tool, MIS tool (graph
-generation), like Crystal Reports. Its written in PHP-GTK and allows you
-to edit and get SQL results from several databases as Text or PostScript Files. 
+Agata Report is a Database Reporting Tool and EIS tool, MIS tool
+(graph generation), like Crystal Reports. It's written in PHP-GTK and
+allows you to edit and get SQL results from several databases as Text
+or PostScript Files. 
+
+%description -l pl
+Agata Report to narzêdzie do generowania raportów z baz danych,
+EIS i MIS (generowanie wykresów), podobne do Crystal Reports. Jest
+napisane w PHP-GTK i pozwala na edycjê oraz uzyskiwanie wyników w SQL
+z ró¿nych baz danych jako pliki tekstowe lub postscriptowe.
 
 %prep
 %setup -q -n %{name}
