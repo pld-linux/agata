@@ -1,0 +1,144 @@
+--- agata/agata.php.old	Fri Dec 13 19:18:15 2002
++++ agata/agata.php	Fri Dec 13 19:44:39 2002
+@@ -175,6 +175,8 @@
+ 
+ 
+ //Gtk::rc_parse('./AquaGraphite/gtk/gtkrc');
++
++$aAgataConfig = parse_ini_file(getenv("HOME")."/.agata",TRUE);
+ $agapp = new AgataMain(&$aAgataConfig, $aDescription, $setupScreenLanguage);
+ Gtk::main();
+ ?>
+--- agata/config.php.old	Fri Dec 13 19:43:24 2002
++++ agata/config.php	Fri Dec 13 19:43:38 2002
+@@ -1,105 +1,6 @@
+ <?
+ $setupScreenLanguage = 'en';
+ 
+-$aAgataConfig['sagu']['Project']        = 'Sagu';
+-$aAgataConfig['sagu']['LoginHOST']      = '192.168.0.62';
+-$aAgataConfig['sagu']['LoginDB']        = 'sagu';
+-$aAgataConfig['sagu']['LoginUID']       = 'postgres';
+-$aAgataConfig['sagu']['LoginPWD']       = '';
+-$aAgataConfig['sagu']['Language']       = 'en';
+-$aAgataConfig['sagu']['DataBase']       = 'pgsql';
+-$aAgataConfig['sagu']['Theme']          = 'AquaGraphite';
+-$aAgataConfig['sagu']['PsSoft']         = 'gv';
+-$aAgataConfig['sagu']['TxtSoft']        = 'kwrite';
+-$aAgataConfig['sagu']['DiaSoft']        = 'dia';
+-$aAgataConfig['sagu']['BrowserSoft']    = 'konqueror';
+-$aAgataConfig['sagu']['SpreadSoft']     = 'kspread';
+-$aAgataConfig['sagu']['Precision']      = '2';
+-$aAgataConfig['sagu']['ThouSep']        = '.';
+-$aAgataConfig['sagu']['DecSep']         = ',';
+-$aAgataConfig['sagu']['DateFmt']        = 'd/m/Y';
+-$aAgataConfig['sagu']['DateTimeFmt']    = 'd/m/Y';
+-$aAgataConfig['sagu']['Orientation']    = 'Portrait';
+-$aAgataConfig['sagu']['PsLineLen']      = '500';
+-
+-$aAgataConfig['siga']['Project']        = 'Siga';
+-$aAgataConfig['siga']['LoginHOST']      = '192.168.0.6';
+-$aAgataConfig['siga']['LoginDB']        = 'dadosadv';
+-$aAgataConfig['siga']['LoginUID']       = 'postgres';
+-$aAgataConfig['siga']['LoginPWD']       = '';
+-$aAgataConfig['siga']['Language']       = 'en';
+-$aAgataConfig['siga']['DataBase']       = 'pgsql';
+-$aAgataConfig['siga']['Theme']          = '4Missy';
+-$aAgataConfig['siga']['PsSoft']         = 'gv';
+-$aAgataConfig['siga']['TxtSoft']        = 'kwrite';
+-$aAgataConfig['siga']['DiaSoft']        = 'dia';
+-$aAgataConfig['siga']['BrowserSoft']    = 'konqueror';
+-$aAgataConfig['siga']['SpreadSoft']     = 'kspread';
+-$aAgataConfig['siga']['Precision']      = '2';
+-$aAgataConfig['siga']['ThouSep']        = '.';
+-$aAgataConfig['siga']['DecSep']         = ',';
+-$aAgataConfig['siga']['DateFmt']        = 'd/m/Y';
+-$aAgataConfig['siga']['DateTimeFmt']    = 'd/m/Y';
+-$aAgataConfig['siga']['Orientation']    = 'Portrait';
+-$aAgataConfig['siga']['PsLineLen']      = '500';
+-
+-$aAgataConfig['test']['Project']        = 'Teste';
+-$aAgataConfig['test']['LoginHOST']      = 'SAMPLE';
+-$aAgataConfig['test']['LoginDB']        = 'SAMPLE';
+-$aAgataConfig['test']['LoginUID']       = 'db2inst1';
+-$aAgataConfig['test']['LoginPWD']       = 'db2inst1';
+-$aAgataConfig['test']['Language']       = 'pt';
+-$aAgataConfig['test']['DataBase']       = 'odbc';
+-$aAgataConfig['test']['Theme']          = '4Missy';
+-$aAgataConfig['test']['PsSoft']         = 'gv';
+-$aAgataConfig['test']['TxtSoft']        = 'kwrite';
+-$aAgataConfig['test']['DiaSoft']        = 'dia';
+-$aAgataConfig['test']['BrowserSoft']    = 'konqueror';
+-$aAgataConfig['test']['SpreadSoft']     = 'kspread';
+-$aAgataConfig['test']['Precision']      = '2';
+-$aAgataConfig['test']['ThouSep']        = '.';
+-$aAgataConfig['test']['DecSep']         = ',';
+-$aAgataConfig['test']['DateFmt']        = 'd/m/Y';
+-$aAgataConfig['test']['DateTimeFmt']    = 'd/m/Y';
+-$aAgataConfig['test']['Orientation']    = 'Portrait';
+-$aAgataConfig['test']['PsLineLen']      = '500';
+-
+-$aAgataConfig['gnuteca']['Project']     = 'Gnuteca';
+-$aAgataConfig['gnuteca']['LoginHOST']   = '192.168.0.54';
+-$aAgataConfig['gnuteca']['LoginDB']     = 'gnuteca';
+-$aAgataConfig['gnuteca']['LoginUID']    = 'postgres';
+-$aAgataConfig['gnuteca']['LoginPWD']    = '';
+-$aAgataConfig['gnuteca']['Language']    = 'se';
+-$aAgataConfig['gnuteca']['DataBase']    = 'pgsql';
+-$aAgataConfig['gnuteca']['Theme']       = 'No theme';
+-$aAgataConfig['gnuteca']['PsSoft']      = 'gv';
+-$aAgataConfig['gnuteca']['TxtSoft']     = 'kwrite';
+-$aAgataConfig['gnuteca']['DiaSoft']     = 'dia';
+-$aAgataConfig['gnuteca']['BrowserSoft'] = 'konqueror';
+-$aAgataConfig['gnuteca']['SpreadSoft']  = 'kspread';
+-$aAgataConfig['gnuteca']['Precision']   = '2';
+-$aAgataConfig['gnuteca']['ThouSep']     = '.';
+-$aAgataConfig['gnuteca']['DecSep']      = ',';
+-$aAgataConfig['gnuteca']['DateFmt']     = 'd/m/Y';
+-$aAgataConfig['gnuteca']['DateTimeFmt'] = 'd/m/Y';
+-$aAgataConfig['gnuteca']['Orientation'] = 'Portrait';
+-$aAgataConfig['gnuteca']['PsLineLen']   = '500';
+-
+-$aAgataConfig['mysql']['Project']       = 'mysql';
+-$aAgataConfig['mysql']['LoginHOST']     = '192.168.0.54';
+-$aAgataConfig['mysql']['LoginDB']       = 'test';
+-$aAgataConfig['mysql']['LoginUID']      = 'mysql';
+-$aAgataConfig['mysql']['LoginPWD']      = '';
+-$aAgataConfig['mysql']['Language']      = 'pt';
+-$aAgataConfig['mysql']['DataBase']      = 'mysql';
+-$aAgataConfig['mysql']['Theme']         = '4Missy';
+-$aAgataConfig['mysql']['PsSoft']        = '';
+-$aAgataConfig['mysql']['TxtSoft']       = '';
+-$aAgataConfig['mysql']['BrowserSoft']   = '';
+-$aAgataConfig['mysql']['SpreadSoft']    = '';
+-
+-
+-
+ $aDescription['Project'] = 'Project Name';
+ $aDescription['LoginHOST'] = 'IP Address of Database';
+ $aDescription['LoginDB'] = 'Database Name';
+--- agata/config.ini.old	Thu Jan  1 01:00:00 1970
++++ agata/config.ini	Fri Dec 13 19:49:12 2002
+@@ -0,0 +1,22 @@
++# [database]
++# 
++# Project        = Sagu
++# LoginHOST      = 192.168.0.62
++# LoginDB        = sagu
++# LoginUID       = postgres
++# LoginPWD       = 
++# Language       = en
++# DataBase       = pgsql
++# Theme          = AquaGraphite
++# PsSoft         = gv
++# TxtSoft        = kwrite
++# DiaSoft        = dia
++# BrowserSoft    = konqueror
++# SpreadSoft     = kspread
++# Precision      = 2
++# ThouSep        = .
++# DecSep         = ,
++# DateFmt        = d/m/Y
++# DateTimeFmt    = d/m/Y
++# Orientation    = Portrait
++# PsLineLen      = 500
