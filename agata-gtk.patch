@@ -1,0 +1,11 @@
+--- agata/agata.php.old	Fri Dec 13 23:17:30 2002
++++ agata/agata.php	Fri Dec 13 23:17:41 2002
+@@ -36,7 +36,7 @@
+ if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN')
+   dl('php_gtk.dll');
+ else
+-  dl('php_gtk.so');
++  dl('gtk.so');
+ 
+ class AgataMain extends AgataCore
+ {
