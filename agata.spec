@@ -8,6 +8,7 @@ License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
 Patch0:		%{name}-ini.patch
+Patch1:		%{name}-gtk.patch
 URL:		http://agata.codigolivre.org.br/
 Requires:	php-gtk
 Requires:	php-pear-DB
@@ -22,6 +23,7 @@ to edit and get SQL results from several databases as Text or PostScript Files.
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
 
 %build
 
@@ -40,6 +42,8 @@ cp -f agata.php $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -f common.php $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -f config.php $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -f Main.php $RPM_BUILD_ROOT%{_datadir}/%{name}
+
+cp -f *.def $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 cat <<EOF > $RPM_BUILD_ROOT%{_bindir}/agata
 #!/bin/sh
