@@ -13,6 +13,7 @@ Patch0:		%{name}-ini.patch
 Patch1:		%{name}-gtk.patch
 Patch2:		%{name}-etc_dir.patch
 URL:		http://agata.codigolivre.org.br/
+BuildRequires:	unzip
 Requires:	php-gtk
 Requires:	php-pear-DB
 BuildArch:	noarch
