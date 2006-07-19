@@ -1,5 +1,6 @@
-# TODO: applnk
-
+# TODO:
+# - applnk
+# - update to muuuuuch neeeever version
 Summary:	Agata Reports
 Summary(pl):	Agata - narzêdzie do raportów
 Name:		agata
@@ -7,12 +8,12 @@ Version:	3_final
 Release:	2
 License:	GPL
 Group:		X11/Development/Tools
-Source0:	http://download.codigolivre.org.br/agata/%{name}_%{version}.zip
+Source0:	http://codigolivre.org.br/frs/download.php/563/%{name}_%{version}.zip
 # Source0-md5:	078933cb6f320151cb71ae96560bd31d
 Patch0:		%{name}-ini.patch
 Patch1:		%{name}-gtk.patch
 Patch2:		%{name}-etc_dir.patch
-URL:		http://agata.codigolivre.org.br/
+URL:		http://www.agata.org.br/
 BuildRequires:	unzip
 Requires:	php-gtk
 Requires:	php-pear-DB
