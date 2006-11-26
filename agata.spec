@@ -5,7 +5,7 @@ Summary:	Agata Reports
 Summary(pl):	Agata - narzêdzie do raportów
 Name:		agata
 Version:	3_final
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://codigolivre.org.br/frs/download.php/563/%{name}_%{version}.zip
@@ -15,7 +15,7 @@ Patch1:		%{name}-gtk.patch
 Patch2:		%{name}-etc_dir.patch
 URL:		http://www.agata.org.br/
 BuildRequires:	unzip
-Requires:	php-gtk
+Requires:	php(gtk)
 Requires:	php-pear-DB
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,10 +27,10 @@ allows you to edit and get SQL results from several databases as Text
 or PostScript Files.
 
 %description -l pl
-Agata Report to narzêdzie do generowania raportów z baz danych,
-EIS i MIS (generowanie wykresów), podobne do Crystal Reports. Jest
-napisane w PHP-GTK i pozwala na edycjê oraz uzyskiwanie wyników w SQL
-z ró¿nych baz danych jako pliki tekstowe lub postscriptowe.
+Agata Report to narzêdzie do generowania raportów z baz danych, EIS i
+MIS (generowanie wykresów), podobne do Crystal Reports. Jest napisane
+w PHP-GTK i pozwala na edycjê oraz uzyskiwanie wyników w SQL z ró¿nych
+baz danych jako pliki tekstowe lub postscriptowe.
 
 %prep
 %setup -q -n %{name}
