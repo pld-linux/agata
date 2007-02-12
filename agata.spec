@@ -2,7 +2,7 @@
 # - applnk
 # - update to muuuuuch neeeever version
 Summary:	Agata Reports
-Summary(pl.UTF-8):   Agata - narzędzie do raportów
+Summary(pl.UTF-8):	Agata - narzędzie do raportów
 Name:		agata
 Version:	3_final
 Release:	3
